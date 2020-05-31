@@ -1,0 +1,63 @@
+
+
+/** express initialization */
+
+const express = require("express");
+const http = require("http");
+const socketIo = require("socket.io");
+const axios = require("axios");
+
+const port = process.env.PORT || 4001;
+const index = require("./index");
+
+const app = express();
+app.use(index);
+
+const server = http.createServer(app);
+server.listen(port, () => console.log(`Listening on port ${port}`));
+const io = socketIo(server); // < Interesting!
+/** create socket io server */
+
+
+const UserStore = require("./clientDataStore");
+
+io.on('connection', function (socket) {
+    console.log("Connected Socket = " + socket.id);
+    console.dir(socket);
+
+    socket.on('peer-msg', function (data) {
+        console.log('Message from peer: %s', data)
+        socket.broadcast.emit('peer-msg', data)
+    })
+
+    socket.on('disconnect', function(){
+        console.log("Disconnected Socket = " + socket.id);
+        UserStore.remove(socket.id)
+    });
+
+
+    socket.on("join", (data) => {
+        UserStore.add(socket, socket.id)
+        console.log(UserStore.get())
+    });
+
+    socket.on('SERVER_CONNECT', function (data) {
+        console.log("Server custom id"+ data.customId)
+        console.log(socket.request.client._peername.address);
+        console.log("Server ip address"+  socket.handshake.headers.origin);
+    });
+
+});
+
+
+
+
+
+/** create socket io client*/
+
+const io1 = require('socket.io-client');
+var socket1 = io1.connect('http://127.0.0.1:4003');
+
+socket1.on('connect', function (data) {
+    socket1.emit('SERVER_CONNECT', { customId: SERVER_ID });
+});

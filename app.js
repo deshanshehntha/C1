@@ -39,7 +39,7 @@
         /** create main connection variable**/
         var mainConnectionURL;
 
-        var MAIN_SERVER_CONNECTION =  "http://localhost:4003/";
+        var MAIN_SERVER_CONNECTION =  "https://enigmatic-spire-15495.herokuapp.com/";
 
 
 

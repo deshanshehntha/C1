@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac6df247-d402-43ac-a712-b037b92fdc03" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    <list default="true" id="ac6df247-d402-43ac-a712-b037b92fdc03" name="Default Changelist" comment="c1 commit">
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
     </list>
@@ -48,13 +47,30 @@
       <workItem from="1591072060147" duration="1218000" />
       <workItem from="1591249962539" duration="7929000" />
       <workItem from="1591418305425" duration="6994000" />
+      <workItem from="1592029973340" duration="615000" />
     </task>
+    <task id="LOCAL-00001" summary="c1 commit">
+      <created>1592030034063</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1592030034063</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="2" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="c1 commit" />
+    <option name="LAST_COMMIT_MESSAGE" value="c1 commit" />
+  </component>
   <component name="WindowStateProjectService">
+    <state x="558" y="91" width="794" height="851" key="CommitChangelistDialog2" timestamp="1592030038550">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="558" y="91" width="794" height="851" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592030038550" />
     <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl" timestamp="1590421438133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -67,10 +83,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="746" y="220" width="418" height="592" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590934784910" />
-    <state x="555" y="255" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1590934794768">
+    <state x="555" y="255" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1592030043943">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="555" y="255" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590934794768" />
+    <state x="555" y="255" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592030043943" />
     <state x="100" y="99" width="1720" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591029052352">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

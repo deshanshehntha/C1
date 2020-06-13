@@ -1,13 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac6df247-d402-43ac-a712-b037b92fdc03" name="Default Changelist" comment="" />
+    <list default="true" id="ac6df247-d402-43ac-a712-b037b92fdc03" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1cPD4gjF9Ik1TNesevn8fO6QpAa" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -17,6 +25,8 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../C2" />
+    <property name="nodejs_package_manager_path" value="npm" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -33,7 +43,11 @@
       <workItem from="1590490036665" duration="57000" />
       <workItem from="1590771935119" duration="1050000" />
       <workItem from="1590773099933" duration="6577000" />
-      <workItem from="1590844490754" duration="14061000" />
+      <workItem from="1590844490754" duration="32055000" />
+      <workItem from="1591019842324" duration="11014000" />
+      <workItem from="1591072060147" duration="1218000" />
+      <workItem from="1591249962539" duration="7929000" />
+      <workItem from="1591418305425" duration="6994000" />
     </task>
     <servers />
   </component>
@@ -45,13 +59,25 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1590421438133" />
-    <state x="100" y="99" width="1720" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1590772954898">
+    <state x="833" y="419" key="Github.ShareDialog" timestamp="1590934779683">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="100" y="99" width="1720" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590772954898" />
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1590852767956">
+    <state x="833" y="419" key="Github.ShareDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590934779683" />
+    <state x="746" y="220" width="418" height="592" key="Github.UntrackedFilesDialog" timestamp="1590934784910">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590852767956" />
+    <state x="746" y="220" width="418" height="592" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590934784910" />
+    <state x="555" y="255" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1590934794768">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="555" y="255" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1590934794768" />
+    <state x="100" y="99" width="1720" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591029052352">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="100" y="99" width="1720" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1591029052352" />
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup" timestamp="1590914276485">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="623" y="228" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1590914276485" />
   </component>
 </project>

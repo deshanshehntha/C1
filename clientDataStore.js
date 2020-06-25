@@ -6,12 +6,13 @@ class ClientDataStore {
         this._data = [];
     }
 
-    add(socketId, id, url, timestamp) {
+    add(socketId, id, url, timestamp, cluster) {
         let obj = {
             socketId : socketId,
             id : id,
             url : url,
-            timestamp : timestamp
+            timestamp : timestamp,
+            cluster : cluster
         }
         this._data.push(obj);
         console.log(this._data)
@@ -26,7 +27,10 @@ class ClientDataStore {
             return obj.socketId !== socketId;
         });
         console.log("deleted" + this._data)
+    }
 
+    removeAll() {
+        this._data = []
     }
 
     getLength() {

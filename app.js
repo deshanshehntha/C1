@@ -22,6 +22,8 @@
         const port = process.env.PORT;
         const index = require("./index");
 
+        const { v4: uuidv4 } = require('uuid');
+
         const app = express();
         app.use(index);
 
@@ -30,6 +32,9 @@
 
         const ClientDataStore = require("./clientDataStore");
         const AllConnectionsTestStore = require("./allConnectionsTestStore");
+        const ElectionContractDataStore = require("./electionContractDataStore");
+        const ElectionContract = require("./SmartContract/model/ElectionContract");
+
 
         console.log(server.address().port)
 
@@ -39,7 +44,14 @@
         /** create main connection variable**/
         var mainConnectionURL;
 
-        var MAIN_SERVER_CONNECTION =  "https://enigmatic-spire-15495.herokuapp.com/";
+        var MAIN_SERVER_CONNECTION =  "http://localhost:4004";
+
+        process.argv.forEach(function (val, index, array) {
+            if(index === 2) {
+                global.globalString = val;
+            }
+            console.log(index + ': ' + val);
+        });
 
 
 
@@ -63,8 +75,8 @@
                 });
 
                 socket.on('client_connection_request', function (data) {
-                    console.log("Client is requesting to connect | URL" + data.ip + "| Client id | " + data.customId)
-                    ClientDataStore.add(socket.id, data.customId, data.ip, Date.now());
+                    console.log("Client is requesting to connect | URL" + data.ip + "| Client id | " + data.customId + "Client type |" + data.cluster)
+                    ClientDataStore.add(socket.id, data.customId, data.ip, Date.now(), data.cluster);
                     AllConnectionsTestStore.add(socket.id, data.customId, data.ip, Date.now())
                     const address = leadershipSelectionAlgorithm(socket.id);
                     socket.emit('redirect_url', address);
@@ -89,11 +101,6 @@
                     socket.emit("connected_to_directed_node")
                 });
 
-                // socket.on('getting_connected_node_details_from_Children', function (data) {
-                //     console.log("Node connection details | url : " + data.url + " Connection Data : " + data.childNodes);
-                //     globalClientSocket.emit('getting_connected_node_details', data);
-                // });
-
 
                 socket.on('getting_connected_node_details', function (data) {
                     console.log("Node connection details | url : " + data.url + " Connection Data : " + data.childNodes);
@@ -103,6 +110,15 @@
                 socket.on('connected_to_directed_node', function (data) {
                     globalClientSocket.emit('connected_to_directed_node');
                 });
+
+                socket.on('eventToEmit', function(data, callback){
+                    globalClientSocket.emit('eventToEmit', data , function (error, message) {
+                        callback(error, message);
+
+                    });
+                });
+
+
             });
 
 
@@ -143,6 +159,7 @@
 
 
             function createNewPeerConnection(data) {
+                console.log(data);
 
                 var socket2 =  require('socket.io-client')(""+data+"", {
                         forceNew: true
@@ -152,7 +169,7 @@
 
 
                 socket2.on('connect', function (data) {
-                    socket2.emit('client_connection_request', {customId: SERVER_ID, ip: connectionURL});
+                    socket2.emit('client_connection_request', {customId: SERVER_ID, ip: connectionURL, cluster : global.globalString});
                     console.log("Connect to parent server node |");
                 });
 
@@ -160,8 +177,6 @@
                     console.log("Disconnected from |" + socket2.io.uri);
                     // console.log(mainConnectionURL + "...Comparing..." + socket2.io.uri);
                     var testUrl = socket2.io.uri;
-                    var compareValue = mainConnectionURL.localeCompare(testUrl);
-                    console.log("compared result" + compareValue)
                     if(mainConnectionURL === testUrl) {
                         console.log("Connect to main")
                         onDisconnectConnectToMain();
@@ -183,6 +198,14 @@
                     }
                 });
 
+                socket2.on("get_all_election_contracts", (data) => {
+                    console.log(data);
+                    data.forEach(obj => {
+                        ElectionContractDataStore.add(obj);
+
+                    })
+                });
+
 
                 socket2.emit('from_child', "test");
 
@@ -190,10 +213,59 @@
                     console.log("Getting connection nodes.....");
                     io.emit('requesting_connection_details');
                     console.log("Getting connected nodes from a peer node|");
-                    // socket2.emit('getting_connected_node_details_from_Children', { "url" : connectionURL, "childNodes" : ClientDataStore.getAll()});
-                    socket2.emit('getting_connected_node_details', { "url" : connectionURL, "childNodes" : ClientDataStore.getAll()});
+                    socket2.emit('getting_connected_node_details', { "url" : connectionURL, "childNodes" : ClientDataStore.getAll(), "cluster": global.globalString });
+                    console.log("sent**********************************");
+                    console.log(ClientDataStore.getAll())
+
 
                 });
+
+                socket2.on('new_election_created', function (data) {
+                    console.log("Recieving new election contract details xx ");
+
+                  const contract = new ElectionContract(data._electionCategory,
+                        data._creator,
+                        data._electionName,
+                        data._voters,
+                        data._candidates,
+                        data._description,
+                        data._startDate,
+                        data._endDate,
+                        data._contractId,
+                        data._clusterLeaderNode
+                    )
+
+                    if(global.globalString === "doctor") {
+                        console.log("success")
+                        mainConnectionURL = data._clusterLeaderNode
+                        console.log(mainConnectionURL);
+                        socket2.disconnect()
+
+                        createNewPeerConnection(mainConnectionURL);
+
+                    }
+
+                    ElectionContractDataStore.add(contract);
+                    io.emit('new_election_created',data);
+
+                });
+
+
+                socket2.on('getVotes', function () {
+                    io.emit("getVotes");
+                    const data = uuidv4();
+                    socket2.emit('eventToEmit', {"data" : data}, function (error, message) {
+                        if(message === data) {
+                            console.log("callaback retuned and identified");
+                            console.log(message);
+                        } else {
+                            console.log("try again");
+                            console.log(error);
+                        }
+
+                    });
+                });
+
 
                 return socket2;
             }

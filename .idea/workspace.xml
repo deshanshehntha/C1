@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="ac6df247-d402-43ac-a712-b037b92fdc03" name="Default Changelist" comment="c1 commit">
+    <list default="true" id="ac6df247-d402-43ac-a712-b037b92fdc03" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app.js" beforeDir="false" afterPath="$PROJECT_DIR$/app.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/clientDataStore.js" beforeDir="false" afterPath="$PROJECT_DIR$/clientDataStore.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/debug.log" beforeDir="false" afterPath="$PROJECT_DIR$/debug.log" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/index.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +27,7 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="TERMINAL_CUSTOM_COMMANDS_GOT_IT" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../C2" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -47,7 +53,12 @@
       <workItem from="1591072060147" duration="1218000" />
       <workItem from="1591249962539" duration="7929000" />
       <workItem from="1591418305425" duration="6994000" />
-      <workItem from="1592029973340" duration="615000" />
+      <workItem from="1592029973340" duration="1421000" />
+      <workItem from="1592508997824" duration="923000" />
+      <workItem from="1592588497972" duration="16834000" />
+      <workItem from="1592836810485" duration="20491000" />
+      <workItem from="1592932384076" duration="2442000" />
+      <workItem from="1593069632011" duration="262000" />
     </task>
     <task id="LOCAL-00001" summary="c1 commit">
       <created>1592030034063</created>
@@ -56,7 +67,14 @@
       <option name="project" value="LOCAL" />
       <updated>1592030034063</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="c1 commit">
+      <created>1592030602533</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1592030602533</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -67,10 +85,10 @@
     <option name="LAST_COMMIT_MESSAGE" value="c1 commit" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="558" y="91" width="794" height="851" key="CommitChangelistDialog2" timestamp="1592030038550">
+    <state x="558" y="91" width="794" height="851" key="CommitChangelistDialog2" timestamp="1592030602361">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="558" y="91" width="794" height="851" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592030038550" />
+    <state x="558" y="91" width="794" height="851" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1592030602361" />
     <state x="743" y="277" width="424" height="479" key="FileChooserDialogImpl" timestamp="1590421438133">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -83,10 +101,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="746" y="220" width="418" height="592" key="Github.UntrackedFilesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1590934784910" />
-    <state x="555" y="255" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1592030043943">
+    <state x="555" y="255" width="800" height="523" key="Vcs.Push.Dialog.v2" timestamp="1592030613320">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="555" y="255" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592030043943" />
+    <state x="555" y="255" width="800" height="523" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1592030613320" />
     <state x="100" y="99" width="1720" height="840" key="com.intellij.history.integration.ui.views.FileHistoryDialog" timestamp="1591029052352">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
